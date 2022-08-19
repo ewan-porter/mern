@@ -1,5 +1,5 @@
 import { Box, Tab } from '@mui/material';
-import { TabPanel, TabContext, TabList } from '@mui/lab';
+import {TabPanel, TabContext, TabList} from '@mui/lab';
 import React, { useState } from 'react';
 import Logout from './Logout';
 import ProjectForm from './ProjectForm';
@@ -18,7 +18,7 @@ const Dashboard = () => {
       <Box sx={{width: '100%', bgcolor: 'background.paper'}}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
+          <TabList onChange={handleChange} aria-label="tabs" centered>
             <Tab label="Item One" value="1" />
             <Tab label="Item Two" value="2" />
            
