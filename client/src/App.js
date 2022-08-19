@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './styles/theme';
-import Dashboard from './components/Dashboard';
+
 
 import Routes from './Routes';
 import Loader from './utils/Loader';

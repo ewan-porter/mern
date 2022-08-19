@@ -6,6 +6,7 @@ const cors = require('cors');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
 const loginRouter = require('./routes/LoginRoutes');
+const projectRouter = require('./routes/ProjectRoutes');
 
 const app = express();
 const MAX_AGE = 1000 * 60 * 60 * 3; //3hrs
@@ -47,6 +48,7 @@ app.use(express.json());
 
 // ROUTERS
 app.use('/api', loginRouter);
+app.use('/api', projectRouter);
 
 // START SERVER
 app.listen(port, () => {

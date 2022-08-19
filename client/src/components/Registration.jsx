@@ -129,7 +129,12 @@ function Registration() {
 
   return (
     <>
-      <Container sx={{ marginTop: 'calc(100vh - 45%)' }} maxWidth="sm">
+    <Box display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+      >
+      <Container maxWidth="sm">
         <Paper elevation={6}>
           <Container
             maxWidth="sm"
@@ -257,7 +262,7 @@ function Registration() {
             </Typography>
           </Stack>
         </Paper>
-      </Container>
+      </Container></Box>
     </>
   );
 }
