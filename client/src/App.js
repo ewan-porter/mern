@@ -1,8 +1,10 @@
 import { useState, useEffect, createContext } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './styles/theme';
+import Dashboard from './components/Dashboard';
 
 import Routes from './Routes';
+import Loader from './utils/Loader';
 export const UserContext = createContext({});
 
 function App() {
@@ -30,7 +32,7 @@ function App() {
     <UserContext.Provider value={userSession}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {loading ? <>loading...</> : <Routes />}
+        {loading ? <Loader /> : <Routes />}
       </ThemeProvider>
     </UserContext.Provider>
   );

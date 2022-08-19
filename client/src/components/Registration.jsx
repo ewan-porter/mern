@@ -26,8 +26,10 @@ import {
   VisibilityOff,
 } from '@mui/icons-material';
 import theme from '../styles/theme';
+import { useNavigate } from 'react-router-dom';
 
 function Registration() {
+  let navigate = useNavigate();
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -100,9 +102,8 @@ function Registration() {
       }
 
       const data = await res.json();
-      // this is just a visual feedback for user for this demo
-      // this will not be an error, rather we will show a different UI or redirect user to dashboard
-      // ideally we also want a way to confirm their email or identity
+
+      navigate('/');
       setErrors({
         ...errors,
         fetchError: true,
