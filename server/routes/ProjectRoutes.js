@@ -35,17 +35,6 @@ router.get('/showproject', async (req, res) => {
   }
 
 
-// console.log(projects)
-
-
- 
-
-
-  // if (req.projects) {
-  //   return res.json(req.projects);
-  // } else {
-  //   return res.status(400).json('No projects found');
-  // }
 });
 
 
