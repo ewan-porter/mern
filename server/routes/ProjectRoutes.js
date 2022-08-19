@@ -31,7 +31,7 @@ router.get('/showproject', async (req, res) => {
     return res.json(projects)
     
   } catch (error) {
-    return res.status(400).json({ msg: 'No projects found' });
+    return res.status(400).json({ msg: 'Server Error' });
   }
 
 
