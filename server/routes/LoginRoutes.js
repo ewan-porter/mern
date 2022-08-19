@@ -64,4 +64,18 @@ router.get('/isAuth', async (req, res) => {
   }
 });
 
+router.delete('/logout', async (req, res) => {
+  if (req.session) {
+    req.session.destroy((err) => {
+      if (err) {
+        res.status(400).send('Unable to log out');
+      } else {
+        res.send('User Logged Out');
+      }
+    });
+  } else {
+    res.end();
+  }
+});
+
 module.exports = router;
