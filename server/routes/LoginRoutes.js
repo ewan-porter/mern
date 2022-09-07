@@ -48,7 +48,7 @@ router.post(`/login`, async (req, res) => {
   const matchPassword = await bcrypt.compare(password, user.password);
   if (matchPassword) {
     //add user to session
-    const userSession = { email: user.email };
+    const userSession = { email: user.email, id: user._id };
     req.session.user = userSession;
     return res.status(200).json({ msg: 'You have logged in successfully' });
   } else {
@@ -66,16 +66,16 @@ router.get('/isAuth', async (req, res) => {
 
 router.delete('/logout', async (req, res) => {
   if (req.session) {
-    req.session.destroy(err => {
+    req.session.destroy((err) => {
       if (err) {
-        res.status(400).send('Unable to log out')
-      } else { 
-        res.send("User Logged Out")
+        res.status(400).send('Unable to log out');
+      } else {
+        res.send('User Logged Out');
       }
     });
   } else {
-    res.end()
+    res.end();
   }
-})
+});
 
 module.exports = router;

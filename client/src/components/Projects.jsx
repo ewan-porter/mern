@@ -1,5 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 
+import ProjectRating from './ProjectRating'
+
 const Projects = () => {
   const [loading, setLoading] = useState(true);
   const [projectData, setProjectData] = useState([]);
@@ -25,9 +27,13 @@ const Projects = () => {
   return <>
   {projectData.map((index) => (
     <div><h1>{index.projectName}</h1>
-    <h1>{index.projectDescription}</h1></div>
+    <h1>{index.projectDescription}</h1>
+    <p>{index.projectRating}</p>
+
+    </div>
     
   ))}
+  <ProjectRating/>
   </>;
 };
 
